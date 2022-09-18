@@ -33,7 +33,6 @@ class AuthTest extends TestCase
     public function creates_a_new_user_if_the_provided_user_does_not_exist()
     {
         $user = $this->mockAbstractUser();
-        Socialite::shouldReceive('driver->user')->andReturn($user);
 
         $this->call('GET', '/auth/callback/github', [
             'code' => uniqid(),
@@ -64,7 +63,6 @@ class AuthTest extends TestCase
             'name' => $this->faker->name(),
             'email' => $this->faker->email()
         ]);
-        Socialite::shouldReceive('driver->user')->andReturn($user);
 
         $this->call('GET', '/auth/callback/github', [
             'code' => uniqid(),
@@ -96,6 +94,7 @@ class AuthTest extends TestCase
 
         $user->token = uniqid();
         $user->refreshToken = uniqid();
+        Socialite::shouldReceive('driver->stateless->user')->andReturn($user);
 
         return $user;
     }
