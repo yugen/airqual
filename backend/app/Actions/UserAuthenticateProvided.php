@@ -17,7 +17,7 @@ class UserAuthenticateProvided
      */
     public function handle($provider)
     {
-        $user = Socialite::driver($provider)->user();
+        $user = Socialite::driver($provider)->stateless()->user();
 
         $user = User::updateOrCreate([
             'provider' => $provider,

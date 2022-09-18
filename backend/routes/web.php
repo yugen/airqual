@@ -21,7 +21,7 @@ use App\Http\Requests\AuthRedirectRequest;
  * Redirect to OAuth Provider
  */
 Route::get('/auth/redirect', function (AuthRedirectRequest $request) {
-    return Socialite::driver($request->provider)->redirect();
+    return Socialite::driver($request->provider)->stateless()->redirect();
 });
 
 /**
