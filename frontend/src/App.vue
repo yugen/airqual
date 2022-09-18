@@ -3,6 +3,7 @@
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
 import {ref, computed, onMounted, provide} from 'vue';
 import {api} from './http';
+import Dashboard from '@/views/Dashboard.vue'
 
 const user = ref();
 const fetchUser = async () => {
@@ -47,7 +48,7 @@ onMounted(() => {
     <div class="my-6 container">
       <div>
         <div v-if="isAuthed">
-          <router-view :user="user" />
+          <Dashboard :user="user" />
         </div>
         <ul v-else class="flex flex-col space-y-2">
             <li><a href="/auth/redirect?provider=github" class="btn blue">Login with Github</a></li>
