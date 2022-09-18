@@ -1,0 +1,78 @@
+version: "3"
+services:
+    database:
+        container_name: airqual-db
+        image: mysql:8.0
+        ports:
+            - "13309:3306"
+        volumes:
+            - .docker/mysql/data:/var/lib/mysql
+        environment:
+            - MYSQL_DATABASE=airqual
+            - MYSQL_ROOT_PASSWORD=root
+            - MYSQL_USER=airqual
+            - MYSQL_PASSWORD=airqual
+            - MYSQL_SORT_BUFFER_SIZE=256000000
+    backend:
+        build: ./backend/
+        image: airqual-app
+        container_name: airqual-app
+        sysctls:
+            - net.ipv4.ip_unprivileged_port_start=0
+        depends_on:
+            - database
+            # - redis
+        ports:
+            - "9000:9000"
+        links:
+            - database:database
+            # - redis:redis
+        volumes:
+            - ./backend:/var/www/html
+        environment:
+            CONTAINER_ROLE: app
+            CONTAINER_ENV: local
+    frontend:
+        build: ./frontend
+        image: nginx:1.21
+        environment:
+            - BACKEND=backend
+        volumes:
+            - ./frontend/.docker/nginx.conf:/etc/nginx/nginx.conf:ro
+            - ./frontend:/usr/share/nginx/html:ro
+        ports:
+            - "8080:8080"
+        depends_on:
+            - backend
+
+    # redis:
+    #     container_name: airqual-redis
+    #     image: centos/redis-5-centos7
+    #     ports:
+    #         - "6379:6379"
+    #     environment:
+    #         - REDIS_PASSWORD="null"
+    # scheduler:
+    #     image: airqual-app
+    #     container_name: airqual-scheduler
+    #     sysctls:
+    #         - net.ipv4.ip_unprivileged_port_start=0
+    #     depends_on:
+    #         - app
+    #     volumes:
+    #         - .:/srv/app
+    #     environment:
+    #         CONTAINER_ROLE: scheduler
+    #         CONTAINER_ENV: local
+    # queue:
+    #     image: airqual-app
+    #     container_name: airqual-queue
+    #     sysctls:
+    #         - net.ipv4.ip_unprivileged_port_start=0
+    #     depends_on:
+    #         - app
+    #     volumes:
+    #         - .:/srv/app
+    #     environment:
+    #         CONTAINER_ROLE: queue
+    #         CONTAINER_ENV: local

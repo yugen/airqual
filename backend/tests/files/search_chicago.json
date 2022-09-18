@@ -1,0 +1,112 @@
+{
+    "status": "ok",
+    "data": [
+        {
+            "uid": 7397,
+            "aqi": "54",
+            "time": {
+                "tz": "-06:00",
+                "stime": "2022-09-17 16:00:00",
+                "vtime": 1663452000
+            },
+            "station": {
+                "name": "Chi_sp, Illinois, USA",
+                "geo": [
+                    41.9136,
+                    -87.7239
+                ],
+                "url": "usa/illinois/chi_sp",
+                "country": "US"
+            }
+        },
+        {
+            "uid": 13147,
+            "aqi": "57",
+            "time": {
+                "tz": "-05:00",
+                "stime": "2022-09-17 16:00:00",
+                "vtime": 1663448400
+            },
+            "station": {
+                "name": "East Chicago - Marina, Indiana, USA",
+                "geo": [
+                    41.653446,
+                    -87.435435
+                ],
+                "url": "usa/indiana/east-chicago-marina"
+            }
+        },
+        {
+            "uid": 7394,
+            "aqi": "55",
+            "time": {
+                "tz": "-06:00",
+                "stime": "2022-09-17 16:00:00",
+                "vtime": 1663452000
+            },
+            "station": {
+                "name": "Chi_com, Illinois, USA",
+                "geo": [
+                    41.7547,
+                    -87.7136
+                ],
+                "url": "usa/illinois/chi_com",
+                "country": "US"
+            }
+        },
+        {
+            "uid": 7595,
+            "aqi": "42",
+            "time": {
+                "tz": "-06:00",
+                "stime": "2022-09-17 16:00:00",
+                "vtime": 1663452000
+            },
+            "station": {
+                "name": "Cicero2, Illinois, USA",
+                "geo": [
+                    41.864329,
+                    -87.748826
+                ],
+                "url": "usa/illinois/cicero2",
+                "country": "US"
+            }
+        },
+        {
+            "uid": 11935,
+            "aqi": "60",
+            "time": {
+                "tz": "-06:00",
+                "stime": "2022-09-17 16:00:00",
+                "vtime": 1663452000
+            },
+            "station": {
+                "name": "Kingery Near-road #1, Illinois, USA",
+                "geo": [
+                    41.578603,
+                    -87.557392
+                ],
+                "url": "usa/illinois/kingery-near-road--1",
+                "country": "US"
+            }
+        },
+        {
+            "uid": 10180,
+            "aqi": "58",
+            "time": {
+                "tz": "-05:00",
+                "stime": "2022-09-17 16:00:00",
+                "vtime": 1663448400
+            },
+            "station": {
+                "name": "Hammond-167th St, Indiana, USA",
+                "geo": [
+                    41.594427,
+                    -87.495044
+                ],
+                "url": "usa/indiana/hammond-167th-st",
+                "country": "US"
+            }
+        }
+    ]
+}

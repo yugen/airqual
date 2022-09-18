@@ -1,0 +1,17 @@
+/.docker/mysql
+/.openshift/secrets
+/frontend/node_modules
+/public/storage
+/storage/*.key
+/backend/vendor
+/backend/.docker/mysql
+import-data
+.env
+.env.backup
+.phpunit.result.cache
+Homestead.json
+Homestead.yaml
+npm-debug.log
+yarn-error.log
+/.idea
+/.vscode
