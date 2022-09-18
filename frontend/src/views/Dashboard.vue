@@ -25,6 +25,7 @@
         }
         return 'text-green-600'
     })
+    const showAssessment = computed(() => assessment.value && assessment.value.message)
 
     const postSettings = async () => {
         try {
@@ -57,12 +58,12 @@
 </script>
 <template>
     <div>
-        <section v-if="assessment">
-            <h2 :class="assessmentTitleColor">Air Quality Assessment</h2>
+        <section v-if="showAssessment">
+            <h2 :class="assessmentTitleColor">Air Quality Assessment for {{settings.location}}</h2>
             <ObjectDictionary :obj="assessment"></ObjectDictionary>
+            <hr>
+            <br>
         </section>
-        <hr>
-        <br>
         <section class="bg-gray-200 p-4 rounded-lg">
             <h3>Set your location &amp; AQ threshold</h3>
             <div>

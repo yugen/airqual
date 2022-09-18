@@ -29,10 +29,10 @@ Route::get('/auth/redirect', function (AuthRedirectRequest $request) {
  */
 Route::get('/auth/callback/{provider}', function ($provider) {
     (new UserAuthenticateProvided)->handle($provider);
-    return redirect('/');
+    return redirect(url('/'));
 });
 
 Route::get('/auth/logout', function () {
     Auth::logout();
-    return response()->redirectTo('/');
+    return response()->redirectTo(url('/'));
 });
