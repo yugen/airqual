@@ -46,6 +46,8 @@ class AqiCnClient
         $response = $this->get('search/', ['keyword' => $keyword]);
         $data = json_decode($response->getBody()->getContents());
 
+        \Log::debug('data: ', [$data]);
+
         return $data;
     }
 

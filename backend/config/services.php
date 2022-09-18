@@ -35,17 +35,18 @@ return [
     'aqicn_token' => env('AQICN_API_TOKEN'),
     'aqicn_url' => env('AQICN_URL', 'https://api.waqi.info/'),
 
-// I'm going to killmyself if these changes doen't get picked up.
     // OAuth Providers
     'github' => [
         'client_id' => env('OAUTH_GITHUB_CLIENT_ID'),
         'client_secret' => env('OAUTH_GITHUB_CLIENT_SECRET'),
-        'redirect' => env('APP_URL', 'https://airqual.apps.cloudapps.unc.edu').'/auth/callback/github'
+        // 'redirect' => env('APP_URL', 'https://airqual.apps.cloudapps.unc.edu').'/auth/callback/github'
+        'redirect' => env('OAUTH_GITHUB_REDIRECT', 'https://airqual.apps.cloudapps.unc.edu/auth/callback/github')
     ],
     'google' => [
         'client_id' => env('OAUTH_GOOGLE_CLIENT_ID'),
         'client_secret' => env('OAUTH_GOOGLE_CLIENT_SECRET'),
-        'redirect' => env('APP_URL', 'https://airqual.apps.cloudapps.unc.edu').'/auth/callback/google'
+        // 'redirect' => env('APP_URL', 'https://airqual.apps.cloudapps.unc.edu').'/auth/callback/google'
+        'redirect' => env('OUATH_GOOGLE_REDIRECT', 'https://airqual.apps.cloudapps.unc.edu/auth/callback/google')
     ]
 
 ];
