@@ -34,7 +34,7 @@ onMounted(() => {
       <div class="container py-3 flex">
         <div id="main-menu" class="flex space-x-4 flex-grow">
             <div class="inline-block pr-4">
-                <router-link to="/" class="black font-bold text-lg" title="Home">AirQual</router-link>
+                AirQual
             </div>
         </div>
         <div>
