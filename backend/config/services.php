@@ -35,6 +35,7 @@ return [
     'aqicn_token' => env('AQICN_API_TOKEN'),
     'aqicn_url' => env('AQICN_URL', 'https://api.waqi.info/'),
 
+// I'm going to killmyself if these changes doen't get picked up.
     // OAuth Providers
     'github' => [
         'client_id' => env('OAUTH_GITHUB_CLIENT_ID'),
