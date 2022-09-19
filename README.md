@@ -5,7 +5,7 @@
 * Extract api calls to a service module in frontend.
 * Break client Dashboard into separate components.
 * End2End tests with Cypress.
-* Cache results from api
+* Cache results from api.
 
 ### Features
 * Currently, person can log in with either a google or github account, but those airqual accounts are not linked.  Provide a way for 
